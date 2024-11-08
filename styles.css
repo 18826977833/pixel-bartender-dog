@@ -1,0 +1,342 @@
+/* 基础样式 */
+body {
+    background-color: #2c2137;
+    font-family: 'VT323', monospace;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 标题区域 */
+.title-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #4a4a8f;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+.title-section h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* 主要内容区域 */
+.main-content {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* 左侧菜单 */
+.menu-hint {
+    width: 200px;
+    padding: 15px;
+    background-color: #4a4a8f;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+}
+
+.menu-hint h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.menu-items p {
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-items p:hover {
+    background-color: #5f5fa8;
+    cursor: pointer;
+}
+
+/* 中间场景区域 */
+.center-scene {
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+.pixel-scene {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #3f3f74;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* 右侧饮品展示区 */
+.drink-showcase {
+    width: 200px;
+    text-align: center;
+}
+
+.drink-showcase h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.drink-display {
+    position: relative;
+    padding: 30px;
+    background-color: #4a4a8f;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+    min-height: 200px;
+}
+
+/* 彩带效果 */
+.ribbon-left, .ribbon-right {
+    position: absolute;
+    font-size: 24px;
+    animation: swing 2s infinite alternate;
+}
+
+.ribbon-left {
+    left: 10px;
+    top: 50%;
+}
+
+.ribbon-right {
+    right: 10px;
+    top: 50%;
+}
+
+/* 闪光效果 */
+.sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.sparkles::before {
+    content: '✨';
+    position: absolute;
+    animation: sparkle 1.5s infinite;
+}
+
+/* 动画效果 */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #fff; }
+    100% { box-shadow: 0 0 20px #fff; }
+}
+
+@keyframes swing {
+    0% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+
+@keyframes sparkle {
+    0% { 
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    50% { opacity: 1; }
+    100% { 
+        transform: translate(50px, -50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 其他样式保持不变 */
+.pixel-dog {
+    font-size: 80px;
+    line-height: 1;
+    animation: float 3s infinite ease-in-out;
+}
+
+.pixel-drink {
+    font-size: 60px;
+    line-height: 1;
+    transition: all 0.3s;
+}
+
+.dialogue-box {
+    background-color: #4a4a8f;
+    border: 4px solid #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#drink-input {
+    padding: 10px;
+    font-size: 20px;
+    background-color: #2c2137;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+    width: 300px;
+}
+
+#confirm-btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #ff6b97;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    transition: transform 0.1s;
+}
+
+#confirm-btn:hover {
+    transform: scale(1.05);
+}
+/* 修改场景相关的样式 */
+.pixel-scene {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #3f3f74;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 确保元素靠底部对齐 */
+}
+
+/* 调整狗狗容器 */
+.dog-container {
+    position: absolute;
+    bottom: 120px; /* 调整到合适的高度 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* 确保狗狗在前面 */
+    width: 200px; /* 控制容器大小 */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 调整狗狗大小和动画 */
+.pixel-dog {
+    font-size: 150px; /* 增大狗狗尺寸 */
+    line-height: 1;
+    animation: float 3s infinite ease-in-out;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* 添加光晕效果 */
+}
+
+/* 调整吧台 */
+.bar-counter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px; /* 增加吧台高度 */
+    background: linear-gradient(to bottom, #8b6d9c, #6a4f7c); /* 渐变效果 */
+    border-top: 4px solid #ffffff;
+    z-index: 1;
+}
+
+/* 吧台装饰 */
+.bar-items {
+    position: absolute;
+    top: -30px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+/* 场景装饰 */
+.scene-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.shelf {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 30px;
+    opacity: 0.8;
+}
+
+.wall-decor {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 30px;
+    opacity: 0.8;
+}
+
+.lights {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+    opacity: 0.8;
+}
+
+/* 调整动画效果 */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* 添加背景装饰 */
+.pixel-scene::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(106, 79, 124, 0.3) 0%, rgba(63, 63, 116, 0.3) 100%);
+    pointer-events: none;
+}
+
+/* 调整对话框位置 */
+.dialogue-box {
+    margin-top: 20px;
+    background-color: #4a4a8f;
+    border: 4px solid #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 添加更多装饰元素 */
+.bar-counter::after {
+    content: '🎮 🎲 🎯';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    opacity: 0.8;
+}
