@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>像素风调酒小狗</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题区域 -->
+        <div class="title-section">
+            <h1>🐕 调酒小狗的像素酒吧 🍸</h1>
+        </div>
+
+        <!-- 主要场景区域 -->
+        <div class="main-content">
+            <!-- 左侧菜单提示 -->
+            <div class="menu-hint">
+                <h2>🎯 饮品菜单</h2>
+                <div class="menu-items">
+                    <p>🍹 果汁系列</p>
+                    <p>☕ 咖啡系列</p>
+                    <p>🧋 奶茶系列</p>
+                    <p>🍸 鸡尾酒系列</p>
+                    <p>🥤 冰沙系列</p>
+                    <p>⭐ 特调系列</p>
+                    <p>🍵 茶系列</p>
+                </div>
+            </div>
+
+            <!-- 中间场景区域 -->
+            <div class="center-scene">
+                <div class="pixel-scene">
+                    <div class="scene-decorations">
+                        <div class="shelf">📚 🍶 🍾</div>
+                        <div class="wall-decor">🎵 🎶 🎼</div>
+                        <div class="lights">💡 💫 ⭐</div>
+                    </div>
+                    <div class="dog-container">
+                        <div id="dog-sprite" class="pixel-dog">🐕</div>
+                    </div>
+                    <div class="bar-counter">
+                        <div class="bar-items">🍸 🍹 🍷 🥃</div>
+                    </div>
+                </div>
+
+                <!-- 对话框和输入区域 -->
+                <div class="dialogue-box">
+                    <p class="dog-text" id="dog-text">汪！欢迎光临！想喝点什么呢？</p>
+                    <div class="input-container">
+                        <input type="text" id="drink-input" placeholder="请告诉我你想喝的饮料...">
+                        <button id="confirm-btn">调制</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧饮品展示区 -->
+            <div class="drink-showcase">
+                <h2>🌟 调制结果</h2>
+                <div class="drink-display">
+                    <div class="ribbon-left">🎀</div>
+                    <div id="generated-drink" class="pixel-drink">🥤</div>
+                    <div class="ribbon-right">🎀</div>
+                    <div class="sparkles"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
